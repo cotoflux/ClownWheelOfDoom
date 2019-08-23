@@ -19,9 +19,8 @@ class ConexionDB
         {
             $response = $this->conector->connect_error;
         }
-        //echo $response;
+        echo $response;
 
     }
-}
 }
 ?>

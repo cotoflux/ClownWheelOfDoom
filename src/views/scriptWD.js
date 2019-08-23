@@ -7,8 +7,29 @@ function wait(ms) {
 var coderD = " ";
 
 function jugar() {
-  var x = Math.floor((Math.random() * 10) + 1);
-  var listaT = ["Enric", "Nellay", "Xia", "Edgar", "Alex", "Peter", "Andres", "Ari", "Jason", "Pi"];
+  var x = Math.floor((Math.random() * 23) + 1);
+  var listaT = ["Arnau", "Camilo",
+  "Carlos",
+  "Delfina",
+  "Enric",
+  "Erik",
+  "Ferran",
+  "Franco",
+  "Isa",
+  "Janina",
+  "Jason",
+  "Kavan",
+  "Manuela",
+  "Nathalia",
+  "Nellay",
+  "Noelia",
+  "Nuria",
+  "Raul",
+  "Sergi",
+  "Xia",
+  "Unai",
+  "Andres",
+  "Thierry"];
   coderD = " ";
   coderD = listaT[x - 1];
   var slotdelay = 0;
