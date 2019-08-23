@@ -6,10 +6,12 @@ function conectarPhp ()
     data: 'random',
     success:function (res){
         console.log (res);
-        $("#slot1").append(res);
+        $("#slot1").append(res);    
+        $("#slot2").append(res);
+        $("#slot3").append(res);
+        $("#profile").append(res);
 
     }
 
     });
 }
-conectarPhp();

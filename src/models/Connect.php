@@ -19,7 +19,7 @@ class Connect
         {
             $response = $this->conector->connect_error;
         }
-        echo $response;
+        // echo $response;
         return $this->conector;
 
     }
@@ -29,7 +29,7 @@ class Connect
         $result=mysqli_query($manu, $lista);
         $a=array();
         foreach($result as $value){
-            echo "<br/>".$value['id'];
+            // echo "<br/>".$value['id'];
             $a[]=$value['id'];
         }
        // return $result;
@@ -49,14 +49,14 @@ class Connect
 
     function cambioEstado($idAModificar, $con)
     {
-        echo "a";
+       
 
         $sql="UPDATE usuarios  
         SET estado = 1
         WHERE id = $idAModificar";
         $result=mysqli_query($con,$sql);
 
-        echo "b";
+        /* echo "b";
 
         $sql2= "SELECT id,estado FROM usuarios WHERE estado=1";
         $result2 = mysqli_query($con,$sql2);
@@ -64,9 +64,20 @@ class Connect
             echo "<br/>id-->".$value['id'];
             echo "<br/>estado-->".$value['estado'];
 
+        } */
+
+
+    }
+    function mostrarMuerto($id,$con)
+    {
+        $sql="SELECT nombre FROM usuarios WHERE id=$id";
+        $nombre = mysqli_query($con,$sql);
+        $guardarNombre;
+        foreach($nombre as $value)
+        {
+            $guardarNombre=$value['nombre']; 
         }
-
-
+        return $guardarNombre;
     }
 
     function reset($con)
@@ -74,25 +85,26 @@ class Connect
         $sql= "UPDATE usuarios  
         SET estado = 0";
         $result=mysqli_query($con,$sql);
-        $sql2= "SELECT * FROM usuarios WHERE estado=0";
+       /*  $sql2= "SELECT * FROM usuarios WHERE estado=0";
         $resultado2=mysqli_query($con,$sql2);
         foreach($resultado2 as $value)
         {
             echo "<br/>id-->".$value['id'];
             echo "<br/>nombre".$value['nombre']; 
             echo "<br/>estado-->".$value['estado'];
-        }
+        } */
     }
 }
 //Instancia Obj
-// $conexion = new Connect();
+ $conexion = new Connect();
 
-/* $con = $conexion->connectBD();
+ $con = $conexion->connectBD();
 $listaId=$conexion->listaUsuarios($con);
 $idUsuario = $conexion->matarUsuario($listaId);
-//$conexion->cambioEstado($idUsuario,$con);
+$nombreMuerto=$conexion->mostrarMuerto($idUsuario,$con);
+$conexion->cambioEstado($idUsuario,$con);
 $conexion->reset($con);
-//echo "<br/> Random entre 5 y 15-->".rand(5,15); */
+//echo "<br/> Random entre 5 y 15-->".rand(5,15); 
 
 
 ?>
