@@ -1,4 +1,4 @@
-PROJECT OF WHEEL OF DOOM:
+PROJECT OF WHEEL OF DOOM FOR FACTORIAF5:
 
 This project was to make a Wheel to choose in between of the names of the class given. 
 
